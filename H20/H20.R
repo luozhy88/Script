@@ -9,6 +9,7 @@ library(h2o)
 h2o.init()
 
 # Import a sample binary outcome train/test set into H2O
+
 train <- h2o.importFile("https://s3.amazonaws.com/erin-data/higgs/higgs_train_10k.csv")
 test <- h2o.importFile("https://s3.amazonaws.com/erin-data/higgs/higgs_test_5k.csv")
 
@@ -53,8 +54,16 @@ dl_perf
 
 plot(dl_perf)
 h2o.auc(dl_perf)
+h2o.auc(dl_perf, train = TRUE, valid = TRUE, xval = FALSE)
+
+pred <- h2o.predict(object = aml, newdata = test)
+pred
+# View a summary of the prediction with a probability of TRUE
+summary(pred$p1, exact_quantiles = TRUE)
+
 
 ###############################example2#######################################
+#https://docs.h2o.ai/h2o/latest-stable/h2o-docs/explain.html
 library(h2o)
 
 h2o.init()
