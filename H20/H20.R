@@ -48,9 +48,36 @@ exm
 # ROC
 model <- aml@leader
 dl_perf <- h2o.performance(model,train = T)
+dl_perf <- h2o.performance(model,newdata = test)
 dl_perf
 
 plot(dl_perf)
 h2o.auc(dl_perf)
 
+###############################example2#######################################
+library(h2o)
 
+h2o.init()
+
+# Import wine quality dataset
+f <- "https://h2o-public-test-data.s3.amazonaws.com/smalldata/wine/winequality-redwhite-no-BOM.csv"
+df <- h2o.importFile(f)
+
+# Response column
+y <- "quality"
+
+# Split into train & test
+splits <- h2o.splitFrame(df, ratios = 0.8, seed = 1)
+train <- splits[[1]]
+test <- splits[[2]]
+
+# Run AutoML for 1 minute
+aml <- h2o.automl(y = y, training_frame = train, max_runtime_secs = 60, seed = 1)
+
+# Explain leader model & compare with all AutoML models
+exa <- h2o.explain(aml, test)
+exa
+
+# Explain a single H2O model (e.g. leader model from AutoML)
+exm <- h2o.explain(aml@leader, test)
+exm
