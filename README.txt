@@ -11,3 +11,6 @@ find . -type f -name "*.pdf" -execdir bash -c 'pdftoppm "$1" "${1%.pdf}.png" -pn
 
 # 用find函数找到所有以sh结尾的bash文件，然后进入每个bash文件的目录，然后批量进行跑"bash -x file.sh"
 find . -type f -name "*.sh" -execdir bash -x '{}' \;
+
+
+ls -lS #从大到小排序文件大小
