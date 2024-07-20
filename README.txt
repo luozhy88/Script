@@ -14,3 +14,6 @@ find . -type f -name "*.sh" -execdir bash -x '{}' \;
 
 
 ls -lS #从大到小排序文件大小
+
+# firecrawl爬虫
+https://github.com/mendableai/firecrawl
