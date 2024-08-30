@@ -17,3 +17,6 @@ ls -lS #从大到小排序文件大小
 
 # firecrawl爬虫
 https://github.com/mendableai/firecrawl
+
+# 查看top后使用的程序线程数目
+ps aux | grep "01.2_get_HMDB.R" | grep -v grep | wc -l
