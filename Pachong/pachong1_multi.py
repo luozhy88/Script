@@ -28,7 +28,7 @@ class PubChemSpider(threading.Thread):
         options = FirefoxOptions()
         options.add_argument('--headless')
         driver = webdriver.Remote(
-            command_executor='http://192.167.30.206:4444/wd/hub',
+            command_executor='http://192.161.30.206:4444/wd/hub',
             options=options
         )
         # 设置隐式等待时间
