@@ -4,6 +4,7 @@
 #可采用多个线程进行浏览器爬虫，镜像可以挂载在不同节点
 #https://github.com/SeleniumHQ/docker-selenium
 #https://selenium-python-zh.readthedocs.io/en/latest/locating-elements.html
+#https://cloud.tencent.com/developer/article/2392281
 # docker run -d -p 4444:4444 -e SE_NODE_MAX_SESSIONS=8 -e SE_NODE_OVERRIDE_MAX_SESSIONS=true --shm-size="8g" selenium/standalone-firefox
 ###################################
 
