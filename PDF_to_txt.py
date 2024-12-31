@@ -1,6 +1,7 @@
 
 ############################################
 #https://ds4sd.github.io/docling/examples/batch_convert
+#install pip install docling --index-url https://pypi.tuna.tsinghua.edu.cn/simple   --extra-index-url https://download.pytorch.org/whl/cpu
 #input_doc_path为输入pdf文件
 #artifacts_path下载好的模型，最好打开科学
 ###export HF_ENDPOINT=https://hf-mirror.com
